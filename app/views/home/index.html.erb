@@ -1,0 +1,21 @@
+<% if flash[:notice] %>
+  <div class="alert alert-info">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<% if flash[:alert] %>
+  <div class="alert alert-danger">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
+<h1>Home page</h1>
+<p>Welcome to the app</p>
+<br />
+<p>Here are some of our users:</p>
+<ul>
+  <% @users.each do |user| %>
+    <li><%= user.email %></li>
+  <% end %>
+</ul>

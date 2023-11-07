@@ -1,0 +1,16 @@
+<div class="container h-100">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col-lg-6">
+
+      <h1 class="text-center mt-5">New friend</h1>
+
+      <%= render "form", friend: @friend %>
+
+      <br>
+
+      <div>
+        <%= link_to "Back", friends_path, class:"btn btn-dark" %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<tbody>
+  <tr>
+    <td><%= link_to friend.name, friend %></td>
+    <td><%= friend.email %></td>
+    <td><%= friend.phone %></td>
+    <td><%= friend.comment %></td>
+    <td><%= button_to "Delete", friend, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-dark btn-sm" %></td>
+  </tr>
+</tbody>

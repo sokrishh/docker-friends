@@ -1,0 +1,14 @@
+<h2 class="text-dark mt-5"><%= @friend.name %></h2>
+
+<p>
+  <strong>Email:</strong> <%= @friend.email %><br/>
+  <strong>Phone:</strong> <%= @friend.phone %><br/>
+  <strong>Comment:</strong> <%= @friend.comment %>
+</p>
+
+<div>
+  <%= link_to "Edit", edit_friend_path(@friend), class:"btn btn-dark" %> |
+  <%= link_to "Back", friends_path, class:"btn btn-dark" %> <br />
+  <br />
+  <%= button_to "Delete", @friend, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-dark" %>
+</div>

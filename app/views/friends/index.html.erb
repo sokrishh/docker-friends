@@ -1,0 +1,43 @@
+<% if user_signed_in? %>
+
+  <h1 class="text-dark mt-5">Friends</h1>
+
+  <table class="table table-bordered table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Comment</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <% if @friends.any? %>
+      <% @friends.each do |friend| %>
+        <% if(friend.user == current_user) %>
+          <%= render friend %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <tbody>
+        <td colspan="5" class="text-center">No friend added yet!</td>
+      </tbody>
+    <% end %>
+  </table>
+
+  <%= link_to "New friend", new_friend_path, class:"btn btn-dark" %>
+
+<% else %>
+  
+  <h1 class="text-dark mt-5">Home</h1>
+  <p>Welcome to the app</p>
+  <br />
+  <p>Here are some of our users:</p>
+  <ul>
+    <% @users.each do |user| %>
+      <li><%= user.email %></li>
+    <% end %>
+  </ul>
+
+<% end %>
